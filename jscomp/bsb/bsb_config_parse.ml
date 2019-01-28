@@ -113,7 +113,7 @@ let extract_package_name_and_namespace
       Some (Ext_namespace.namespace_of_package_name package_name)
     | Some (Str {str}) -> 
       (*TODO : check the validity of namespace *)
-      Some (str)        
+      Some (Ext_namespace.namespace_of_package_name str)        
     | Some x ->
       Bsb_exception.errorf ~loc:(Ext_json.loc_of x)
       "namespace field expect string or boolean"
